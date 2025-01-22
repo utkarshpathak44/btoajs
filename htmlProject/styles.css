@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 4fr 10fr ;
+    grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+    height: 100vh;
+  }
+  
+  .header {
+    /* grid-column: 1 / -1; Span across all columns */
+    grid-area: header;
+    background-color: rgb(64, 65, 65);
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .aside {
+    /* grid-row: 2;  */
+    grid-area: aside;
+    background-color: rgb(217, 217, 217);
+    padding: 20px;
+  }
+
+  
+  .main {
+    /* grid-row: 2;  */
+    grid-area: main;
+    background-color: rgb(243, 243, 243);
+    padding: 20px;
+  }
+  
+  .footer {
+    /* grid-column: 1 / -1;  */
+    grid-area: footer;
+    background-color: lightgray;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .calContainer{
+    width: 100%;
+    height: 40%;
+    background-color: rgb(99, 99, 99);
+    display: grid;
+    grid-template-rows: repeat(6,1fr);
+    grid-template-columns: repeat(7,1fr);
+    gap: 5px;
+
+    padding: 5px;
+  }
+
+  .calenderTitle{
+    grid-column: 1/-1;
+    border: 1px solid blueviolet;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+  }
+
+  .dayHolder{
+    background-color: rgb(23, 23, 23);
+    width:1fr;
+    height: 1fr;
+    border: 1px solid blueviolet;
+    display: grid;
+    place-items: center;
+  }
+
+  .dayHolder:hover{
+    background-color: blueviolet;
+    transition: .15s;
+  }
+  
+  .thisMonth{
+    background-color: rgb(72, 72, 72);
+  }
+
+  @media (max-width: 768px) {
+    .container {
+        grid-template-rows: auto auto auto; 
+        grid-template-columns: 1fr;         
+        grid-template-areas:
+            "header"
+            "aside"
+            "main"
+            "footer";
+    }
+}
+
+.main{
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.expenseContainer{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(74, 74, 74);
+  width: 65%;
+  padding: 20px;
+  gap :3px
+
+
+
+}
+.analysis{
+  flex-direction: column;
+  border: 1px solid rgb(74, 74, 74);
+  width: 35%;
+}
+
+.analysisHeader{
+  width: 100%;
+  border: 1px solid rgb(74, 74, 74);
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.analysisBlock{
+  width: 100%;
+  border: 1px solid rgb(74, 74, 74);
+  height: 80%;
+}
+
+
+.expense{
+  width: 100%;
+  border: 1px solid rgb(69, 69, 69);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  /* justify-items:normal; */
+  justify-content: space-between;
+}
+
+.expenseHeader{
+  width: 100%;
+  border: 1px solid rgb(69, 69, 69);
+  height: 50px;
+  display: flex;
+  align-items: center;
+
+}
+
+
+form {
+  display: flex;         
+  flex-direction: row;
+  gap: 15px;                /* Add space between form elements */
+  width: 100%;              /* Make the form take up full width of the container */
+  max-width: 400px;
+}
+
+input[type="text"],
+select {
+  width: 200px;              /* Make the input and select elements fill the width */
+  padding: 10px;            /* Add padding inside input/select */
+  border: 1px solid #ccc;  /* Add border */
+  border-radius: 5px;      /* Round the corners */
+  font-size: 16px;          /* Increase font size for readability */
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;  /* Green background for the submit button */
+  color: white;               /* White text */
+  border: none;               /* Remove border */
+  padding: 12px;              /* Add padding */
+  border-radius: 5px;         /* Round corners */
+  font-size: 16px;            
+  cursor: pointer;           /* Change cursor to pointer */
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;  
+}
+
+.total{
+  font-size: 5rem;
+}

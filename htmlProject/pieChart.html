@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pie Chart</title>
+  <style>
+    /* Container for the pie chart */
+    .pie-chart {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: conic-gradient(
+        #ff6384 0% 40%,  /* Red (40%) */
+        #36a2eb 40% 70%, /* Blue (30%) */
+        #ffcd56 70% 100% /* Yellow (30%) */
+      );
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Optional: Label the chart */
+    .pie-chart::after {
+      content: "Pie Chart";
+      position: absolute;
+      font-size: 16px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="pie-chart"></div>
+</body>
+</html>

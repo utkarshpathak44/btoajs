@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-pane">
+        <div class="floating-button"><img class="collapseImage" src="/A2/Assignment/assets/arrowRight.svg" alt=""></div>
+        <div class="content">
+          <div class="icon-name-container">
+            <div class="logo">
+              <img width="168" src="assets/weblogo.svg" alt="" />
+            </div>
+          </div>
+          <div class="profileShortcuts">
+            <div class="current-user-container">
+              <div class="user-logo">
+                <img width="41px" src="/A2/Assignment/assets/userlogo.png" alt="" />
+              </div>
+              <div class="user-name-container">
+                <h1 class="username">Utkarsh Pathak</h1>
+                <h2 class="user-designation">Secondary user</h2>
+              </div>
+              <div class="inbox">
+                <img class="DDButton" src="/A2/Assignment/assets/dropdown.svg" alt="" />
+              </div>
+            </div>
+            <div class="dropDownItems">
+              <div class="openProfile">open profile</div>
+              <div>profile status</div>
+              <div>logout</div>
+            </div>
+          </div>
+          <div class="nav-container">
+            <div class="nav-item">
+              <div class="nav-icon">
+                <img src="/A2/Assignment/assets/home.svg" alt="" />
+              </div>
+              <div class="nav-name">Home</div>
+            </div>
+            <div class="nav-item active">
+              <div class="nav-icon ">
+                <img src="/A2/Assignment/assets/docs.svg" alt="" />
+              </div>
+              <div class="nav-name">Documents</div>
+            </div>
+            <div class="nav-item">
+              <div class="nav-icon">
+                <img src="/A2/Assignment/assets/chat.svg" alt="" />
+              </div>
+              <div class="nav-name">Chat with Neptune</div>
+            </div>
+            <div class="nav-item">
+              <div class="nav-icon">
+                <img src="/A2/Assignment/assets/help.svg" alt="" />
+              </div>
+              <div class="nav-name">Help</div>
+            </div>
+            <div class="nav-item">
+              <div class="nav-icon">
+                <img src="/A2/Assignment/assets/settings.svg" alt="" />
+              </div>
+              <div class="nav-name">Settings</div>
+            </div>
+          </div>
+          <div class="bottom-things">
+            <div>
+              <img  class="contact-icon" src="/A2/Assignment/assets/phone.svg" alt="" />
+            </div>
+            <h1>Having trouble?</h1>
+            <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h2>
+            <div class="contact-button">Contact us</div>
+          </div>
+        </div>
+      </div>
+      <div class="right-pane">
+        
+        <div class="nav-curr-position">
+          <img src="assets/Breadcrumb.svg" alt="" />
+        </div>
+        <div class="curr-page">
+          <h1 class="currPageHeader">my Documents</h1>
+          <div class="uploadFile right"><img src="assets/add.svg" alt=""></div>
+          <div class="removeFile"><img src="assets/remove.svg" alt=""></div>
+
+          <div class="search-bar ">
+            <h3>Search Documents</h3>
+            <img src="/A2/Assignment/assets/search.svg" alt="" />
+          </div>
+        </div>
+        <div class="itemsContainer">
+        </div>
+      </div>
+    </div>
+    <!-- <div class="profile-pane">
+      <div class="profile-container">
+        <div class="profileHeader"><div>Profile Name</div><div class="backBtn"></div></div>
+        <div class="profilePicture"></div>
+        <div class="profileAttributes"></div>
+      </div>
+    </div> -->
+    <div class="centeredPopUp">
+      <div class="popUpHeader">
+        <div class="uploadHeaderText">Upload file</div>
+        <div class="uploadClose"><img class="closeIcon" src="assets/close.svg" alt=""></div>
+      </div>
+      <div class="uploadMain">
+          <div class="dropArea"><div>Drop your file here, or</div><input type="file" id="fileInput"></div>
+          <div class="fileInfoArea">
+            <form id="fileForm" action="">
+              <label for="fileName">File Name</label>
+              <input type="text" id="fileName" required><br>
+              <label for="fileStatus">File Status,1 for needsSigning, 2 for Pending and 3 for Completed</label>
+              <input type="text" id="fileStatus" required><br>
+              <label for="fileWait">File Wait</label>
+              <input type="number" id="fileWait" required><br>
+              <label for="lastModified">Last Modified</label>
+              <input type="date" id="lastModified" ><br>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="uploadFooter">
+      </div>
+    </div>
+    <div class="profilePage">
+      <div class="profileHeader">
+        <div class="profileHeaderName">Profile name</div>
+        <div class="closeButton"><img  class="profileClose closeIcon" src="/A2/Assignment/assets/close.svg" alt=""></div>
+      </div>
+      <div class="profileMain">
+        <div class="profilePreview">
+          <img id="imagePreview" src="" alt="Image Preview" style="display: none;">
+        </div>
+        <form id="profileForm" class="profile-form" enctype="multipart/form-data">
+          <label for="username">Name:</label>
+          <input type="text" id="username" name="username" placeholder="Enter your name" required>
+      
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+          <label for="designation">Designation:</label>
+          <input type="text" id="desig" name="desig" placeholder="Enter your Designation" required>
+      
+          <label for="profileImage">Profile Image:</label>
+          <input type="file" id="profileImage" name="profileImage" accept="image/*">
+      
+      
+          <button type="submit">Submit</button>
+      </div>
+      <div class="profileFooter"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
