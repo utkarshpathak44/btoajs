@@ -1,0 +1,12 @@
+//create a random user profile details
+const user = {
+    name: "ralph",
+    email: "ralph@tmnt.org",
+    phone: 55567838883233,
+    address: {
+        street: "",
+        city: "",
+        state: "",
+        zip: "",
+    },
+}
