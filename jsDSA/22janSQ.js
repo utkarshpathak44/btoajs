@@ -9,28 +9,39 @@
 //     return arr
 // },[]).sort()) .join(",")
 
-
 // console.log(fun1("apple,banana,orange,apple,grape,banana"))
 
-
-const fun1=(date)=>{ 
-    return new Date(date).getMonth()+1+"/"+new Date(date).getDate()+"/"+new Date(date).getFullYear()
-}
-const dateStr = '2025-01-22T07:42:14.159Z'
+const fun1 = (date) => {
+  return (
+    new Date(date).getMonth() +
+    1 +
+    "/" +
+    new Date(date).getDate() +
+    "/" +
+    new Date(date).getFullYear()
+  );
+};
+const dateStr = "2025-01-22T07:42:14.159Z";
 
 // console.log(fun1('2025-01-22T07:42:14.159Z'))
 
 // console.log(new Date().toLocaleDateString())
 // console.log(new Date().toUTCString())
 
-
 // Write a function to count the occurrences of each category and return an object where
 //  the keys are the categories and the values are their counts.
 
-const inputCategories = ["fruit", "vegetable", "fruit", "meat", "fruit", "vegetable", "meat"];
+const inputCategories = [
+  "fruit",
+  "vegetable",
+  "fruit",
+  "meat",
+  "fruit",
+  "vegetable",
+  "meat",
+];
 
-
-// const fun2=(inputCategories)=>{ 
+// const fun2=(inputCategories)=>{
 //     return inputCategories.reduce((obj,ele)=>{
 //         if(!obj[ele]){
 //             (obj[ele]=1)
@@ -42,36 +53,35 @@ const inputCategories = ["fruit", "vegetable", "fruit", "meat", "fruit", "vegeta
 //     },{})
 // }
 
-
-const fun2 = (inputCategories) => 
-    inputCategories.reduce((obj, ele) => {
-        obj[ele] = (obj[ele] || 0) + 1;
-        return obj;
-    }, {});
+const fun2 = (inputCategories) =>
+  inputCategories.reduce((obj, ele) => {
+    obj[ele] = (obj[ele] || 0) + 1;
+    return obj;
+  }, {});
 
 // console.log(fun2(inputCategories))
 
-const a1= [1, 4, 7]
-const a2 = [2, 5, 8]
-const a3 = [3, 6, 9]
+const a1 = [1, 4, 7];
+const a2 = [2, 5, 8];
+const a3 = [3, 6, 9];
 
-const fun3=(a1,a2,a3)=>[...a1,...a2,...a3].sort()
-
+const fun3 = (a1, a2, a3) => [...a1, ...a2, ...a3].sort();
 
 // console.log(fun3(a1,a2,a3))
 
-
-const fun4=(students)=>{
-    return students.reduce((arr,row)=>{
-        if(!arr.find((ele)=>ele.name===row.name)){
-            arr=[...arr,{name:row["name"],scores:{[row.subject]:(row.score)}}]
-        }else{
-            arr.find((ele)=>ele.name==row.name).scores[row.subject]=(row.score)
-        }
-        return arr
-    },[])
-}
-
+const fun4 = (students) => {
+  return students.reduce((arr, row) => {
+    if (!arr.find((ele) => ele.name === row.name)) {
+      arr = [
+        ...arr,
+        { name: row["name"], scores: { [row.subject]: row.score } },
+      ];
+    } else {
+      arr.find((ele) => ele.name == row.name).scores[row.subject] = row.score;
+    }
+    return arr;
+  }, []);
+};
 
 // console.log(fun4([
 //     { name: "Alice", subject: "Math", score: 85 },
@@ -82,29 +92,73 @@ const fun4=(students)=>{
 //     { name: "Bob", subject: "Science", score: 88 }
 //    ]))
 
-
-const fun5=(num)=>{
-    return {min:Math.min(...num),max:Math.max(...num),avg:num.reduce((acc,val)=>acc+val,0)/num.length}
-}
+const fun5 = (num) => {
+  return {
+    min: Math.min(...num),
+    max: Math.max(...num),
+    avg: num.reduce((acc, val) => acc + val, 0) / num.length,
+  };
+};
 
 // console.log(fun5([15, 20, 35, 40, 50, 65, 80]))
 
-
-const fun6=(strings,substr)=>{
-    return strings.filter((str)=>str.includes(substr))
-}
+const fun6 = (strings, substr) => {
+  return strings.filter((str) => str.includes(substr));
+};
 
 // console.log(fun6(["apple", "banana", "grape", "pineapple", "orange"],"app"))
 
-const fun7=(num)=>{
-return num.map((num)=>num*num+1)
-}
-
+const fun7 = (num) => {
+  return num.map((num) => num * num + 1);
+};
 
 // console.log(fun7([1, 2, 3, 4, 5]))
 
-const fun8=()=>{
+const fun8 = () => {};
 
-}
+// console.log(fun8())
 
-console.log(fun8())
+// const fun9 = (spMatrix) => {
+//   let traversedFlatArray = [];
+//   while (spMatrix.length !== 0) {
+//     traversedFlatArray = [...traversedFlatArray, ...spMatrix.shift()];
+//     traversedFlatArray = [
+//       ...traversedFlatArray,
+//       spMatrix.reduce((acc, row) => {
+//         return acc.push(row.pop());
+//       }, []),
+//     ];
+//     traversedFlatArray = [...traversedFlatArray, ...spMatrix.pop().reverse()];
+//     traversedFlatArray = [
+//       ...traversedFlatArray,
+//       spMatrix.reduce((acc, row) => {
+//         return acc.push(row.shift());
+//       }, []),
+//     ];
+//   }
+
+//   return traversedFlatArray;
+// };
+
+// const matrix = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9],
+// ];
+
+// console.log(fun9(matrix));
+
+const swap = (nums, i) => {
+  const temp = nums[i];
+  nums[i] = nums[temp - 1];
+  nums[temp - 1] = temp;
+};
+
+const fun10 = (nums) => {
+  for (i = 0; i < nums.length; i++) {
+    if (nums[i] < arr.length - 1) {
+      swap(nums, i);
+    }
+  }
+  //   nums.forEach((element) => {});
+};
