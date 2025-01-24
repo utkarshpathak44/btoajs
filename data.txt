@@ -1,1 +1,7 @@
 here is some random data
+
+here is some random data
+also this is some addition on the data
+after making some changes on the file it goes to staging area?
+hehe
+more changes hehehehehehe
