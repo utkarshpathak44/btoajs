@@ -1,1 +1,1 @@
-created in a new branch, this will not result in a fast forward commit
+i have now rewritten the data from the log
