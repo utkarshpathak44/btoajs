@@ -156,9 +156,24 @@ const swap = (nums, i) => {
 
 const fun10 = (nums) => {
   for (i = 0; i < nums.length; i++) {
-    if (nums[i] < arr.length - 1) {
+    if (nums[i] !== i + 1 && nums[i] <= arr.length) {
       swap(nums, i);
     }
   }
-  //   nums.forEach((element) => {});
+  nums.forEach((num, index) => {
+    if (index + 1 !== num) {
+      return index + 1;
+    }
+  });
+};
+
+// 2503. Maximum Number of Points From Grid Queries
+const maxPoints = (grid, queries) => {
+  let visited = new Set();
+
+  //start at top left
+  let rs = 0;
+  let cs = 0;
+  //if queries[i] is greater than curr
+  const sortedQueries = [...queries].sort();
 };
